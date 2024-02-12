@@ -1,0 +1,29 @@
+### Creating todos
+POST http://localhost:8000/user
+Content-Type: application/json
+
+{
+    "name":"leah",
+    "age":43,
+    "home": "Nyeri"
+}
+### Fetching all users
+GET http://localhost:8000/user
+
+### Read  users by age
+GET http://localhost:8000/user/43
+
+### Read users by age filter
+GET http://localhost:8000/user/43
+
+### Update user by age
+PUT http://localhost:8000/user/43
+Content-Type: application/json
+
+{
+    "name":"leah Nyambura",
+    "age":43,
+    "home": "Nyandarua"
+}
+### Delete user by age
+DELETE  http://localhost:8000/user/18

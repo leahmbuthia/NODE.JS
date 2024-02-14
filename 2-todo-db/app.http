@@ -1,0 +1,39 @@
+### Creating a Todos
+### Creating todos
+POST http://localhost:8000/add
+Content-Type: application/json
+
+{
+    "id":8,
+    "tasks":"taking a walk",
+    "completed": false
+}
+
+
+### Fetching all todos
+GET http://localhost:8000/todos
+
+### Fetching by id todos
+GET http://localhost:8000/todos/5
+
+
+### Deleteing todos
+DELETE  http://localhost:8000/todos/76
+
+
+### updating   todos
+PUT http://localhost:8000/todos/update/7
+Content-Type: application/json
+
+{
+    "tasks":"Debugging the code",
+    "completed": false
+}
+### Patcthing updating  completed
+PATCH  http://localhost:8000/todos/update/7
+Content-Type: application/json
+{
+    "completed": true
+}
+
+

@@ -1,3 +1,3 @@
 const addTwoNumbers = (a, b) => a + b;
 
-module.exports = addTwoNumbers;
+export default addTwoNumbers;

@@ -1,3 +1,3 @@
-const addTwoNumbers = require('./addTwoNumbers')
+const addTwoNumbers = require('./addTwoNumbers');
 
-console.log(addTwoNumbers(1,2));
+console.log(addTwoNumbers(1, 2)); // 3

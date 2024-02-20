@@ -1,0 +1,17 @@
+[
+    {
+        "name": "kevin",
+        "age": 24,
+        "home": "Nyeri"
+    },
+    {
+        "name": "jane",
+        "age": 18,
+        "home": "Kirinyaga"
+    },
+    {
+        "name": "john",
+        "age": 26,
+        "home": "kutus"
+    }
+]

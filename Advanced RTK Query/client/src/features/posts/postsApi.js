@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import axios from 'axios';
 
 export const postsApi = createApi({
 
@@ -47,3 +48,10 @@ export const {
      useAddPostMutation,
      useDeletePostMutation,
      useUpdatePostMutation } = postsApi;
+
+    //  export const useGetJsonPlaceholderPostsQuery = () => {
+    //     return useQuery('getJsonPlaceholderPosts', async () => {
+    //       const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+    //       return response.data;
+    //     });
+    //   };

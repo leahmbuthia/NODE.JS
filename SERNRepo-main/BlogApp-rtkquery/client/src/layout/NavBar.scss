@@ -1,0 +1,63 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    max-height: fit-content;
+
+    padding: 0.5rem;
+    border-bottom: 1px solid #F1F5F9;
+
+    .nav-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-inline: 1rem;
+        width: 100vw;
+
+        .search {
+            display: flex;
+            flex: 0.5;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            width: 50vh;
+            height: 50%;
+            border: 1px solid #F1F5F9;
+            border-radius: 5px;
+            padding: 0.5rem;
+
+            input {
+                width: 100%;
+                max-height: 50%;
+                border: none;
+                outline: none;
+            }
+
+            input::placeholder {
+                color: #A0AEC0;
+            }
+        }
+
+        .nav-body_right {
+            width: 50vh;
+            display: flex;
+            flex: 0.5;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.5rem;
+
+            .userAvator {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .userAvator:hover {
+                cursor: pointer;
+                transition: all 0.3s ease-in-out;
+                background-color: rgb(199, 215, 228);
+                border-radius: 10%;
+            }
+        }
+    }
+}

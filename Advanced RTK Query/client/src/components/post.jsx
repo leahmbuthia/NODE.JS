@@ -1,49 +1,68 @@
+import { useState } from 'react';
+import { useUpdatePostMutation, useDeletePostMutation } from '../features/posts/postsApi';
 
-import UpdatePosts from "../features/posts/UpdatePosts";
-import { createPortal } from "react-dom";
-import {  useDeletePostMutation, useUpdatePostMutation } from "../features/posts/postsApi";
+const Post = ({ post }) => {
+  const [updatePost, { isLoading: isUpdating }] = useUpdatePostMutation();
+  const [deletePost, { isLoading: isDeleting }] = useDeletePostMutation();
+  const [isEditing, setIsEditing] = useState(false);
 
+  const [updatedPostData, setUpdatedPostData] = useState({
+    title: post.title,
+    body: post.body,
+  });
 
-import { useState } from "react";
-const Post = ({post}) => {
+  const handleUpdate = () => {
+    updatePost({ id: post.id, ...updatedPostData });
+    setIsEditing(false); // Close the modal after updating
+  };
 
-  const [showModal, setShowModal] = useState(false);
-  
-  
-  const [deletePost] = useDeletePostMutation();
-     const Deleteposts = (e) =>{
-      e.preventDefault();
-      deletePost(post.id)
+  const handleDelete = () => {
+    deletePost(post.id);
+  };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUpdatedPostData({
+      ...updatedPostData,
+      [name]: value,
+    });
+  };
 
-     }
-     const [updatePost] = useUpdatePostMutation();
-     const UpdatePost = (e) =>{
-      e.preventDefault();
-      updatePost(post.id)
-
-
-     }
-   
-   
   return (
-    
-
-    
-    <article  className='card' key={post._id}>
-                <h3>{post.post_title}</h3>
-                <p >{post.post_content.substring(0, 100)}</p>
-                <p>Author: {post.author_id}</p>
-                <button onClick={Deleteposts}>Delete</button>
-                <button onClick={(UpdatePost) => setShowModal(true)}> Update</button>
-                {showModal && createPortal(
-        <UpdatePosts onClose={() => setShowModal(false)} />,
-        document.body
-      )}
-
+    <article className='card' key={post._id}>
+      <h3>{post.title}</h3>
+      <p>{post.body && post.body.substring(0, 100)}</p>
+      <button onClick={() => setIsEditing(true)} disabled={isUpdating}>
+        Edit
+      </button>
+      <button onClick={handleDelete} disabled={isDeleting}>
+        {isDeleting ? 'Deleting...' : 'Delete'}
+      </button>
+      {isEditing && <EditPostModal post={post} updatedPostData={updatedPostData} handleChange={handleChange} handleUpdate={handleUpdate} />}
     </article>
-    
-  )
-}
+  );
+};
 
-export default Post
+const EditPostModal = ({ post, updatedPostData, handleChange, handleUpdate }) => {
+  return (
+    <div className="modal">
+      <div className="modal-content">
+        <h2>Edit Post</h2>
+        <input
+          type="text"
+          name="title"
+          value={updatedPostData.title}
+          onChange={handleChange}
+        />
+        <textarea
+          name="post_content"
+          value={updatedPostData.body}
+          onChange={handleChange}
+        />
+        <button onClick={handleUpdate}>Update</button>
+      </div>
+    </div>
+  );
+};
+
+export default Post;

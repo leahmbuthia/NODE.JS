@@ -22,8 +22,8 @@ POST http://localhost:8000/api/posts
 Content-Type: application/json
 
 {
-    "post_title": "post from rest client5oo",
-    "post_content": "Content of the post5oo",
+    "post_title": "leah",
+    "post_content": "the bird",
     "author_id": 1
 }
 

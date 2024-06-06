@@ -1,0 +1,40 @@
+.directsms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-height: 40%;
+    gap: 10px;
+
+    .writeSms {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        height: 20%;
+
+
+        .createMsgBtn {
+            background-color: #2563EB;
+            color: white;
+            border: none;
+            border-radius: 2px;
+            padding-inline: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                background-color: #05318a;
+                border-radius: 2px;
+                transition: all 0.2s ease-in-out;
+            }
+        }
+
+    }
+
+    .closeContact {
+        height: 80%;
+        cursor: pointer;
+
+    }
+}

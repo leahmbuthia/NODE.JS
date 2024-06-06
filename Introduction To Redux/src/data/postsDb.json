@@ -1,17 +1,20 @@
 [
     {
-        "name": "kevin",
-        "age": 24,
-        "home": "Nyeri"
+        "id":"1",
+        "title": "kevin",
+        "content": 24,
+        "author": "Nyeri"
     },
     {
-        "name": "jane",
-        "age": 18,
-        "home": "Kirinyaga"
+        "id":"2",
+        "title": "jane",
+        "content": 18,
+        "author": "Kirinyaga"
     },
     {
-        "name": "john",
-        "age": 26,
-        "home": "kutus"
+        "id":"3",
+        "title": "john",
+        "content": 26,
+        "author": "kutus"
     }
 ]

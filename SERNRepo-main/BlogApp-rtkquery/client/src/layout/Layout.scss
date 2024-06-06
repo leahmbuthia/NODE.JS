@@ -1,0 +1,20 @@
+.layout {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.1rem;
+    width: 100vw;
+
+    .side {
+        max-width: 10vw;
+    }
+
+    .main {
+        max-width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        gap: 0.1rem;
+        border-left: 1px solid #F1F5F9;
+    }
+}
